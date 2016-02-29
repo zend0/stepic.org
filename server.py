@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import socket
@@ -15,7 +15,6 @@ while True:
         if not data:
             break
         if data == 'close':
-            conn.close()
             break
         conn.send(data)
     conn.close()
