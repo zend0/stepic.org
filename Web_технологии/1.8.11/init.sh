@@ -2,8 +2,8 @@
 
 mkdir -p ~/web/etc
 
-cp ~/stepic.org/Web_технологии/1.9.11/etc/* ~/web/etc
-cp ~/stepic.org/Web_технологии/1.9.11/web/* ~/web
+cp -f ~/stepic.org/Web_технологии/1.9.11/etc/* ~/web/etc
+cp -f ~/stepic.org/Web_технологии/1.9.11/web/* ~/web
 
 sudo rm /etc/nginx/sites-enabled/default
 sudo ln -s /home/box/web/etc/nginx.conf /etc/nginx/sites-enabled/test.conf
