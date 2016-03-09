@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# http://parijatmishra.blogspot.ru/2008/01/writing-server-with-pythons-asyncore.html
+
 import asyncore
 import socket
 
