@@ -1,14 +1,19 @@
 #!/bin/bash
 
-mkdir -p ~/web/etc
+HomeDir=/home/box/web
 
-cp -f ~/stepic.org/Web_технологии/1.9.11/etc/* ~/web/etc
-cp -f ~/stepic.org/Web_технологии/1.9.11/web/* ~/web
+if [ ! -d $HomeDir ]
+then
+    mkdir -p $HomeDir
+fi
+
+cp -rf ~/stepic.org/Web_технологии/web/* $HomeDir
 
 sudo rm /etc/nginx/sites-enabled/default
-sudo ln -sf /home/box/web/etc/nginx.conf /etc/nginx/sites-enabled/test.conf
+sudo ln -sf $HomeDir/etc/nginx.conf /etc/nginx/sites-enabled/web.conf
 sudo /etc/init.d/nginx restart
-sudo ln -sf /home/box/web/etc/gunicorn.conf /etc/gunicorn.d/test
+
+sudo ln -sf $HomeDir/etc/gunicorn.conf /etc/gunicorn.d/django
 sudo /etc/init.d/gunicorn restart
 
 # NEXT
