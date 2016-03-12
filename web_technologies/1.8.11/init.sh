@@ -9,7 +9,7 @@ fi
 
 cp -rf ~/stepic.org/web_technologies/web/* $HomeDir
 
-sudo rm /etc/nginx/sites-enabled/default
+sudo rm -f /etc/nginx/sites-enabled/default
 sudo ln -sf $HomeDir/etc/nginx.conf /etc/nginx/sites-enabled/web.conf
 sudo /etc/init.d/nginx restart
 
