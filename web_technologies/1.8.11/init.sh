@@ -7,7 +7,7 @@ then
     mkdir -p $HomeDir
 fi
 
-cp -rf ~/stepic.org/Web_технологии/web/* $HomeDir
+cp -rf ~/stepic.org/web_technologies/web/* $HomeDir
 
 sudo rm /etc/nginx/sites-enabled/default
 sudo ln -sf $HomeDir/etc/nginx.conf /etc/nginx/sites-enabled/web.conf
