@@ -1,6 +1,6 @@
-# Исключим директорию __pycache__ :
-__pycache__/
-env/
 .idea/
+env/
+__pycache__/
+
 *.pyc
 local_config.py
