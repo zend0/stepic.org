@@ -10,7 +10,7 @@ cp -rf ~/stepic.org/web_technologies/web/* $RootDir
 
 # MySQL
 if [ ! -d /var/lib/mysql/mysql ]; then
-  mkdir -pf /var/lib/mysql
+  mkdir -p /var/lib/mysql
   chown -R mysql:mysql /var/lib/mysql
   mysql_install_db
 fi
