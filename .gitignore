@@ -3,4 +3,4 @@ env/
 __pycache__/
 
 *.pyc
-local_config.py
+local_settings.py
