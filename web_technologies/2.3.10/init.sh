@@ -10,22 +10,24 @@ cp -rf ~/stepic.org/web_technologies/web/* $RootDir
 
 # MySQL
 if [ ! -d /var/lib/mysql/mysql ]; then
-  mkdir -p /var/lib/mysql
-  chown -R mysql:mysql /var/lib/mysql
-  mysql_install_db
+    mkdir -p /var/lib/mysql
+    chown -R mysql:mysql /var/lib/mysql
+    mysql_install_db
+
+    #trap "mysqladmin shutdown" TERM
+    mysqld_safe &
+    #wait
+    sleep 5
+    mysqladmin -u root password ''
+    mysql -u root -e 'GRANT ALL ON *.* TO root@"%" IDENTIFIED BY "" WITH GRANT OPTION'
+    mysql -u root -e 'GRANT ALL ON *.* TO root@"localhost" IDENTIFIED BY "" WITH GRANT OPTION'
+    mysql -u root -e 'FLUSH PRIVILEGES'
 fi
 
-#trap "mysqladmin shutdown" TERM
-mysqld_safe &
-#wait
-sleep 5
-mysqladmin -u root password ''
-mysql -u root -e 'GRANT ALL ON *.* TO root@"%" IDENTIFIED BY "" WITH GRANT OPTION'
-mysql -u root -e 'GRANT ALL ON *.* TO root@"localhost" IDENTIFIED BY "" WITH GRANT OPTION'
-mysql -u root -e 'FLUSH PRIVILEGES'
+sudo /etc/init.d/mysql restart
 
 # Create DB for ask
-mysql -u root -e 'CREATE DATABASE ask'
+mysql -u root -e 'CREATE DATABASE IF NOT EXISTS ask'
 mysql -u root -e 'GRANT ALL PRIVILEGES ON ask.* TO ask@"%" IDENTIFIED BY "passwd"'
 mysql -u root -e 'GRANT ALL PRIVILEGES ON ask.* TO ask@"localhost" IDENTIFIED BY "passwd"'
 mysql -u root -e 'FLUSH PRIVILEGES'
