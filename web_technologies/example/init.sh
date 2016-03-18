@@ -26,8 +26,8 @@ fi
 
 sudo /etc/init.d/mysql restart
 
-# Create DB for 'example'
-mysql -u root -e 'CREATE DATABASE IF NOT EXISTS example'
+# Create DB for 'examp'
+mysql -u root -e 'CREATE DATABASE IF NOT EXISTS examp'
 mysql -u root -e 'GRANT ALL PRIVILEGES ON ask.* TO examp@"%" IDENTIFIED BY "passwd"'
 mysql -u root -e 'GRANT ALL PRIVILEGES ON ask.* TO examp@"localhost" IDENTIFIED BY "passwd"'
 mysql -u root -e 'FLUSH PRIVILEGES'
