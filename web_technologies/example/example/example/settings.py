@@ -56,6 +56,7 @@ WSGI_APPLICATION = 'example.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -65,6 +66,11 @@ DATABASES = {
         'HOST': '127.0.0.1',
     }
 }
+
+
+TEMPLATE_DIRS = (
+    BASE_DIR + '/templates',
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
@@ -83,7 +89,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = BASE_DIR + '/static/'
 
 try:
     from example.local_settings import *
