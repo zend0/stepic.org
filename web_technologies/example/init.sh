@@ -27,9 +27,9 @@ fi
 sudo /etc/init.d/mysql restart
 
 # Create DB for 'examp'
-mysql -u root -e 'CREATE DATABASE IF NOT EXISTS examp'
-mysql -u root -e 'GRANT ALL PRIVILEGES ON ask.* TO examp@"%" IDENTIFIED BY "passwd"'
-mysql -u root -e 'GRANT ALL PRIVILEGES ON ask.* TO examp@"localhost" IDENTIFIED BY "passwd"'
+mysql -u root -e 'CREATE DATABASE IF NOT EXISTS example'
+mysql -u root -e 'GRANT ALL PRIVILEGES ON example.* TO example@"%" IDENTIFIED BY "passwd"'
+mysql -u root -e 'GRANT ALL PRIVILEGES ON example.* TO example@"localhost" IDENTIFIED BY "passwd"'
 mysql -u root -e 'FLUSH PRIVILEGES'
 
 # Nginx and Gunicorn
