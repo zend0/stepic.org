@@ -56,17 +56,15 @@ WSGI_APPLICATION = 'example.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'example',
-        'USER': 'example',
+        'NAME': 'examp',
+        'USER': 'examp',
         'PASSWORD': 'passwd',
         'HOST': '127.0.0.1',
     }
 }
-
 
 TEMPLATE_DIRS = (
     BASE_DIR + '/templates',
