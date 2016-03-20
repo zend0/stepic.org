@@ -27,7 +27,7 @@ fi
 sudo /etc/init.d/mysql restart
 
 # Create DB for ask
-mysql -u root -e 'CREATE DATABASE IF NOT EXISTS ask'
+mysql -u root -e 'CREATE DATABASE IF NOT EXISTS ask CHARACTER SET utf8 COLLATE utf8_general_ci'
 mysql -u root -e 'GRANT ALL PRIVILEGES ON ask.* TO ask@"%" IDENTIFIED BY "passwd"'
 mysql -u root -e 'GRANT ALL PRIVILEGES ON ask.* TO ask@"localhost" IDENTIFIED BY "passwd"'
 mysql -u root -e 'FLUSH PRIVILEGES'
