@@ -1,10 +1,18 @@
 # from django.shortcuts import render
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
+from blog.models import Category, Post
+
 
 # Create your views here.
 def post_list(request, *args, **kwargs):
     # вывести все посты
+    # c = Category(title="Perl")
+    # c.save()
+
+    c = Category.objects.create(title="PHP")
+    c.title = "About PHP"
+    c.save()
     return HttpResponse('OK')
 
 def post_text(request):
