@@ -1,0 +1,15 @@
+<html>
+    <head>...</head>
+    <body>
+        <h1>AskPupkin</h1>
+        <hr />
+        <h1>New Questions</h1> <a href="/popular/">Hot Questions</a>
+        <!-- Блоки с вопросами -->
+        <p>{{ post.text }}></p>
+        {% for comment in comments %}
+            {% include "blog/comment.html" %}
+        {% endfor %}
+
+        <!-- Пагинатор -->
+    </body>
+</html>
