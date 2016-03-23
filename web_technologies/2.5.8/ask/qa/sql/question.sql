@@ -34,5 +34,10 @@ INSERT INTO qa_question (title, text, added_at, rating, author_id) VALUES ('Ск
 INSERT INTO qa_question (title, text, added_at, rating, author_id) VALUES ('Сколько будет 2+1?', 'Кто знает точный ответ, 2+1', '2016-03-11 08:17:49', 1, 1);
 INSERT INTO qa_question (title, text, added_at, rating, author_id) VALUES ('Сколько будет 9+1?', 'Кто знает точный ответ, 9+1', '2016-03-11 07:01:49', 0, 1);
 
-
-
+INSERT INTO qa_answer (text, added_at, question_id, author_id) VALUES ('Я считаю, что 10', '2016-03-23 07:01:49', 7, 1);
+INSERT INTO qa_answer (text, added_at, question_id, author_id) VALUES ('Я считаю, что 12', '2016-03-23 07:03:49', 7, 1);
+INSERT INTO qa_answer (text, added_at, question_id, author_id) VALUES ('Я считаю, что 8',  '2016-03-23 08:15:20', 8, 1);
+INSERT INTO qa_answer (text, added_at, question_id, author_id) VALUES ('Я за 7',           '2016-03-23 08:18:19', 8, 1);
+INSERT INTO qa_answer (text, added_at, question_id, author_id) VALUES ('А я за 9',         '2016-03-23 08:22:39', 8, 1);
+INSERT INTO qa_answer (text, added_at, question_id, author_id) VALUES ('15',               '2016-03-23 09:01:39', 8, 1);
+INSERT INTO qa_answer (text, added_at, question_id, author_id) VALUES ('А я 6',            '2016-03-23 09:32:09', 8, 1);
