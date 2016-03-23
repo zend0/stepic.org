@@ -1,8 +1,8 @@
 <html>
     <head>...</head>
     <body>
-        <h1>{{post.title|truncatechars:80}}</h1>
-        <p>{{post.text}}></p>
+        <h1>{{ post.title|truncatechars:80 }}</h1>
+        <p>{{ post.text }}></p>
         {% for comment in comments %}
             {% include "blog/comment.html" %}
         {% endfor %}
