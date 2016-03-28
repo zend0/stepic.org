@@ -5,11 +5,13 @@
         <hr />
         <h1>New Questions</h1> <a href="/popular/">Hot Questions</a>
         <!-- Блоки с вопросами -->
-        <p>{{ post.text }}></p>
-        {% for comment in comments %}
-            {% include "blog/comment.html" %}
+        {% for q in question %}
+            <p><b>{{ q.title }}</b><br />
+                <i>{{ q.id }} - <a href="/question/{{ q.id }}/">link</a></i>
+            </p>
         {% endfor %}
 
         <!-- Пагинатор -->
+        {% include "qa/paginator.html" %}
     </body>
 </html>
