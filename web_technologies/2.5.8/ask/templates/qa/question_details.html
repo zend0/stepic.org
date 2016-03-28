@@ -1,0 +1,15 @@
+<html>
+    <head>{{ question.title }}</head>
+    <body>
+        <h1>AskPupkin</h1>
+        <hr />
+        <h1>Question</h1>
+        <!-- Блоки с ответами -->
+        {{ question.title }}
+        <h1>Answers</h1>
+        {% for a in answer %}
+            <p><b>{{ a.id }} - {{ a.text }}</b></p>
+        {% endfor %}
+
+    </body>
+</html>
