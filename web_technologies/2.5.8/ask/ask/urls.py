@@ -19,7 +19,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = [
-    url(r'^.*$', 'post_detail', name='post-detail'),
+    url(r'^.*$', 'qa.views.question_list'),
     url(r'^popular/.*$', 'qa.views.test'),
     url(r'^question/(?P<page>\d+)/$', 'qa.views.test'),
 ]

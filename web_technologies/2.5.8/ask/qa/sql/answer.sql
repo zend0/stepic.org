@@ -1,14 +1,15 @@
-INSERT INTO qa_answer (text, added_at, question_id, author_id) VALUES ('Я считаю, что 10', '2016-03-23 07:01:49', 7, 1);
-INSERT INTO qa_answer (text, added_at, question_id, author_id) VALUES ('Я считаю, что 12', '2016-03-23 07:03:49', 7, 1);
-INSERT INTO qa_answer (text, added_at, question_id, author_id) VALUES ('Я считаю, что 8',  '2016-03-23 08:15:20', 8, 1);
-INSERT INTO qa_answer (text, added_at, question_id, author_id) VALUES ('Я за 7',           '2016-03-23 08:18:19', 8, 1);
-INSERT INTO qa_answer (text, added_at, question_id, author_id) VALUES ('А я за 9',         '2016-03-23 08:22:39', 8, 1);
-INSERT INTO qa_answer (text, added_at, question_id, author_id) VALUES ('15',               '2016-03-23 09:01:39', 8, 1);
-INSERT INTO qa_answer (text, added_at, question_id, author_id) VALUES ('А я 6',            '2016-03-23 09:32:09', 8, 1);
-INSERT INTO qa_answer (text, added_at, question_id, author_id) VALUES ('Я считаю, что 11', '2016-03-23 07:01:49', 10, 1);
-INSERT INTO qa_answer (text, added_at, question_id, author_id) VALUES ('Я считаю, что 10', '2016-03-23 07:03:49', 10, 1);
-INSERT INTO qa_answer (text, added_at, question_id, author_id) VALUES ('Я считаю, что 9',  '2016-03-23 08:15:20', 11, 1);
-INSERT INTO qa_answer (text, added_at, question_id, author_id) VALUES ('Я за 8',           '2016-03-23 08:18:19', 11, 1);
-INSERT INTO qa_answer (text, added_at, question_id, author_id) VALUES ('А я за 12',        '2016-03-23 08:22:39', 11, 1);
-INSERT INTO qa_answer (text, added_at, question_id, author_id) VALUES ('19',               '2016-03-23 09:01:39', 11, 1);
-INSERT INTO qa_answer (text, added_at, question_id, author_id) VALUES ('А я 7',            '2016-03-23 09:32:09', 11, 1);
+INSERT INTO qa_answer (text, added_at, question_id, author_id) VALUES
+('Я считаю, что 10', '2016-03-23 07:01:49', 7,  1),
+('Я считаю, что 12', '2016-03-23 07:03:49', 7,  1),
+('Я считаю, что 8',  '2016-03-23 08:15:20', 8,  1),
+('Я за 7',           '2016-03-23 08:18:19', 8,  1),
+('А я за 9',         '2016-03-23 08:22:39', 8,  1),
+('15',               '2016-03-23 09:01:39', 8,  1),
+('А я 6',            '2016-03-23 09:32:09', 8,  1),
+('Я считаю, что 11', '2016-03-23 07:01:49', 10, 1),
+('Я считаю, что 10', '2016-03-23 07:03:49', 10, 1),
+('Я считаю, что 9',  '2016-03-23 08:15:20', 11, 1),
+('Я за 8',           '2016-03-23 08:18:19', 11, 1),
+('А я за 12',        '2016-03-23 08:22:39', 11, 1),
+('19',               '2016-03-23 09:01:39', 11, 1),
+('А я 7',            '2016-03-23 09:32:09', 11, 1);
