@@ -9,6 +9,7 @@ from blog.models import Category, Post
 
 from django.core.paginator import Paginator
 
+
 # Create your views here.
 def post_list(request, *args, **kwargs):
     # вывести все посты
