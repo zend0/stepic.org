@@ -2,55 +2,66 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.http import require_GET
+from django.core.paginator import Paginator
 
 from qa.models import Question, Answer
+
 
 # Create your views here.
 @require_GET
 def question_list(request):
-    """
-    question = get_object_or_404(Question, slug=slug)
-    try:
-        vote = post.votes.filter(user=request.user)[0]
-    except Vote.DoesNotExist:
-        vote = None
+
+    questions = Question.objects
+    questions = questions.order_by('id')
+    questions = questions.reverse()
+
+    limit = request.GET.get('limit', 10)
+    page = request.GET.get('page', 1)
+
+    paginator = Paginator(questions, limit)
+    paginator.baseurl = '/?page='
+    page = paginator.page(page)  # Page
+
+    print(paginator.page_range)
+
     return render(request, 'qa/questions_list.html', {
-        'question': question,
+        'question':  page.object_list,
+        'paginator': paginator,
+        'page':      page,
     })
-    """
-    try:
-        question = Question.objects.get(pk=3)
-    except Question.DoesNotExist:
-        question = None
 
-    # print(question.title)
-    return HttpResponse(question.title)
 
-"""
-def post_details(request, slug):
-    post = get_object_or_404(Post, slug=slug)
-    try:
-        vote = post.votes.filter(user=request.user)[0]
-    except Vote.DoesNotExist:
-        vote = None
-    return render(request, 'blog/post_details.html', {
-        'post': post,
-        'category': post.category,
-        'tags': post.tags.all()[:],
-        'vote': vote,
+@require_GET
+def pop_question_list(request):
+
+    questions = Question.objects
+    questions = questions.order_by('rating')
+    questions = questions.reverse()
+
+    limit = request.GET.get('limit', 10)
+    page = request.GET.get('page', 1)
+
+    paginator = Paginator(questions, limit)
+    paginator.baseurl = '/popular/?page='
+    page = paginator.page(page)  # Page
+
+    print(paginator.page_range)
+
+    return render(request, 'qa/questions_list.html', {
+        'question':  page.object_list,
+        'paginator': paginator,
+        'page':      page,
     })
-"""
-
 
 
 @require_GET
 def question_details(request, slug):
-    question = get_object_or_404(Question, slug=slug)
-    return render(request, 'qa/questions_list.html', {
+    question = get_object_or_404(Question, id=slug)
+
+    answers = Answer.objects.filter(question=question)
+    answers = answers.order_by('id')
+    answers = answers.reverse()
+    return render(request, 'qa/question_details.html', {
         'question': question,
+        'answer': answers,
     })
-
-
-def test(request, *args, **kwargs):
-    return HttpResponse('OK')
-
