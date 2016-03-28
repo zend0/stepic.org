@@ -19,7 +19,9 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = [
-    url(r'^.*$', 'qa.views.question_list'),
-    url(r'^popular/.*$', 'qa.views.test'),
-    url(r'^question/(?P<page>\d+)/$', 'qa.views.test'),
+    url(r'^$', 'qa.views.question_list'),
+    url(r'^\?page=\d+$', 'qa.views.question_list'),
+    url(r'^popular/$', 'qa.views.pop_question_list'),
+    url(r'^popular/\?page=\d+$', 'qa.views.pop_question_list'),
+    url(r'^question/(?P<slug>\d+)/$', 'qa.views.question_details'),
 ]
