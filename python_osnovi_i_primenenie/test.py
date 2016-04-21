@@ -37,10 +37,19 @@ g(f)
 
 print('--------')
 
-
 def s(a, *vs, b=10):
     res = a + b
     print(b)
     for v in vs:
         res += v
     return res
+
+print('--------')
+x = {'foo': {'parent': 'global', 'vars': ['b']},
+      'global': {'parent': None, 'vars': ['a']},
+      'bar': {'parent': 'foo', 'vars': ['a']}}
+
+if 'a' in x['global']['vars']:
+    print('!')
+else:
+    print(':(')

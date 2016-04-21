@@ -17,21 +17,17 @@ def getc(namespace, var):
         if var in x[namespace]['vars']:
             return namespace
         else:
-            getc(x[namespace]['parent'], var)
+            return getc(x[namespace]['parent'], var)
     else:
         return None
 
 
 x = {'global': {'parent': None, 'vars': []}}
-
-# n = int(input())
-n = 1
+n = int(input())
 
 if 1 <= n <= 100:
-    # for i in range(n):
-    cmds = [['create', 'newsp', 'global'], ['add', 'global', 'b'], ['add', 'newsp', 'a'], ['get', 'newsp', 'b']]
-    for cmd in cmds:
-        # cmd = input().split()
+    for i in range(n):
+        cmd = input().split()
         if cmd[0] == 'create':
             createc(cmd[1], cmd[2])
         elif cmd[0] == 'add':
@@ -39,4 +35,4 @@ if 1 <= n <= 100:
         elif cmd[0] == 'get':
             print(getc(cmd[1], cmd[2]))
 
-print(x)
+# print(x)
