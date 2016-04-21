@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 objects = [1, 2, 1, 2, 3, 4, 3, 3, 5]

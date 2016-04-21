@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import sys
@@ -35,11 +35,12 @@ def g(a):
 print("\nMODULE")
 g(f)
 
-print('-----------')
+print('--------')
 
 
-def testt(*fi):
-    print(fi)
-
-lst = ['aa', 'bb']
-testt('a', 'b', 'c', 'd')
+def s(a, *vs, b=10):
+    res = a + b
+    print(b)
+    for v in vs:
+        res += v
+    return res
