@@ -36,20 +36,25 @@ print("\nMODULE")
 g(f)
 
 print('--------')
+class Counter:
+    pass
 
-def s(a, *vs, b=10):
-    res = a + b
-    print(b)
-    for v in vs:
-        res += v
-    return res
+Counter.count = 1000
 
-print('--------')
-x = {'foo': {'parent': 'global', 'vars': ['b']},
-      'global': {'parent': None, 'vars': ['a']},
-      'bar': {'parent': 'foo', 'vars': ['a']}}
+x = Counter
+print(x.count)
 
-if 'a' in x['global']['vars']:
-    print('!')
-else:
-    print(':(')
+z = Counter()
+print(z.count)
+#z.count = 2
+
+x.count = 100
+
+print(x.count)
+print(z.count)
+
+x1 = Counter
+x1.count = 200
+print(x1.count)
+print(x.count)
+
