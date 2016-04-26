@@ -58,3 +58,21 @@ x1.count = 200
 print(x1.count)
 print(x.count)
 
+print('-----------')
+ss = 'a : f d f r'
+#ss = 'a'
+k = ss.split(':')
+print(k)
+
+
+def mysplit(mystr, spl=''):
+    if spl == ':':
+        k = mystr.split(spl)
+        if len(k) > 1:
+            return {k[0]: mysplit(k[1])}
+        else:
+            return {k[0]}
+    else:
+        return mystr.split()
+
+print(mysplit(ss, ':'))
