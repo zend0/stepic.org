@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+"""
+Задание не сделал, код не проходит тесты
+"""
 
 class ConvData:
 

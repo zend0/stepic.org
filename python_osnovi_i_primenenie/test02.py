@@ -1,3 +1,5 @@
+import test
+
 class ConvData:
 
     def __init__(self):

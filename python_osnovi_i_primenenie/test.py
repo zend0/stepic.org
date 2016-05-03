@@ -76,3 +76,5 @@ def mysplit(mystr, spl=''):
         return mystr.split()
 
 print(mysplit(ss, ':'))
+
+print(__name__)
