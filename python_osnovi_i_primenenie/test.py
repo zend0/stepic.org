@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+"""
 import sys
 
 a = 'Hello'
@@ -78,3 +79,11 @@ def mysplit(mystr, spl=''):
 print(mysplit(ss, ':'))
 
 print(__name__)
+"""
+
+
+def chechet(x):
+    return x % 2 == 0
+
+a = [1, 2, 3, 4, 5, 6, 7, 8]
+print(list(filter(chechet, a)))
