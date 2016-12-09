@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+
 def fib(n):
     f = [0, 1]
     if n >= 2:
